@@ -19,7 +19,7 @@ F3::
     ifMsgBox, Yes
     {
         folder1 := folder_clean(folder1)
-        folder2 := "C:\Users\dmpannone\OneDrive - State of Alaska\Log\" date1 "." date2 "." date3 " - " folder1
+        folder2 := "C:\Users\dompa\OneDrive - State of Alaska\Log\" date1 "." date2 "." date3 " - " folder1
     }
     ifMsgBox, No
     {
@@ -33,6 +33,7 @@ F3::
     FileCreateDir, % folder2
     run, explorer.exe "%folder2%"
     Clipboard := folder2
+    Clipboard := folder2 "\"
 return
 
 
@@ -48,6 +49,11 @@ from_gmail() {
     ;Send, ^!z - subfolders
     Send, in:inbox from:
 }
+:*:==ktn::
+known_traveler_number() {
+
+    Send, TT13QZKTK
+}
 
 :*:==tod::
 date_stamp() {
@@ -58,7 +64,7 @@ date_stamp() {
     FormatTime, type_this, % right_now, MM
     Send, %type_this%.
     FormatTime, type_this, % right_now, dd
-    Send, %type_this% -
+    Send, %type_this%
 }
 
 ; For Searching in outlook, just type "frm" then type persons name.
@@ -75,17 +81,25 @@ from__me_outlook() {
 :*:conferenceroom::Conf-JNU 3Mile
 :*:confroom::Conf-JNU 3Mile
 
-:*:==exp::
+:*:==abs::
 fund_codes() {
 this_msg=
 (
-1000 Personal Services
-2000 Travel
-3000 Services
-4000 Commodities
-5000 Capital Outlay
-7000 Grants, Benefits
-8000 Miscellaneous
+Expediture Lines:
+ 1000 Personal Services
+ 2000 Travel
+ 3000 Services
+ 4000 Commodities
+ 5000 Capital Outlay
+ 7000 Grants, Benefits
+ 8000 Miscellaneous
+ 
+Reports:
+ Export Component Detail (1512)
+ Export Project Summary (UGF/DGF/Other/Fed) (1328)
+ Export Project Information (Appropriations with Allocations) (272)
+ Export (1791)
+ Report Change Record Detail with Description (1839) 
 )
 msgbox % this_msg
 }
