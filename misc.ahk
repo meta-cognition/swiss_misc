@@ -32,7 +32,6 @@ F3::
 
     FileCreateDir, % folder2
     run, explorer.exe "%folder2%"
-    Clipboard := folder2
     Clipboard := folder2 "\"
 return
 
@@ -95,11 +94,14 @@ Expediture Lines:
  8000 Miscellaneous
  
 Reports:
- Export Component Detail (1512)
- Export Project Summary (UGF/DGF/Other/Fed) (1328)
- Export Project Information (Appropriations with Allocations) (272)
- Export (1791)
- Report Change Record Detail with Description (1839) 
+ Export: Component Detail (1512)
+ Export: Project Information (Appropriations with Allocations) (272)
+ Export: Change Record Details, *Include all Amended Scenarios* (1791)
+
+ Report: Change Record Detail with Description (1839)  
+ 
+ (Deprecated)
+ Export: Project Summary (UGF/DGF/Other/Fed) (1328)
 )
 msgbox % this_msg
 }
